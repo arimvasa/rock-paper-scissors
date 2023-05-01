@@ -1,19 +1,29 @@
 
-
-function getComputerChoise() {
-    let computerChoises = ("paper", "rock", "scissors")
-    let randomIndex = Math.floor(Math.random() * 3) + 1
+// Returns a random choice between rock, paper and scissors
+function getComputerChoice() {
+    let computerChoices = ["paper", "rock", "scissors"]
+    // Returns 0,1 or 2
+    let randomIndex = Math.floor(Math.random() * 3)
+    return computerChoices[randomIndex]
 }
-
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
-    let greeting
-    if (computerSelection === "paper" && playerSelection === "rock") { greeting = "You Lose! Paper beats Rock" }
-    if (computerSelection === "rock" && playerSelection === "scissors") { greeting = "You Lose! Rock beats Scissors" }
-    if (computerSelection === "scissors" && playerSelection === "paper") { greeting = "You Lose! Scissors beats Paper" }
-    else if (playerSelection === computerSelection) { greeting === "it's a tie game " }
+    let result
 
+    if ((playerSelection === computerSelection)) {
+        result === "It's a tie game"
+    }
+    else if ((playerSelection === "rock" && computerSelection === "paper")
+        || (playerSelection === "paper" && computerSelection === "scissors")
+        || (playerSelection === "scissors" && computerSelection === "rock")) {
+        result = `You Lose! ${computerSelection} beats ${playerSelection}`
+    }
+    else {
+        result = `You Win! ${playerSelection} beats ${computerSelection}`
+    }
+
+    return result
 }
 
 
