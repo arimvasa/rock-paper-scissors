@@ -5,34 +5,38 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ROCK-PAPER-SCISSORS</title>
+        <link rel="stylesheet" href="index.css">
     </head>
-    <h1>Welcome to the rock -paper - scissors game!!</h1>
     <body>
-        <h2>Total Score</h2>
-        <div id='totalScore'>
-            <p>Player Score:</p>
-            <div id="playerScore">0</div>
-            <p>Computer Score:</p>
-            <div id="computerScore">0</div>
+        <h1>Welcome to the rock-paper-scissors game!!</h1>
+
+        <div class="container">
+            <h2>Total Score</h2>
+            <div class="score" id="totalScore">
+                <p>Player Score:</p>
+                <div class="score-value" id="playerScore">0</div>
+                <p>Computer Score:</p>
+                <div class="score-value" id="computerScore">0</div>
+            </div>
+
+            <h2>Round results</h2>
+            <div class="round" id="playround">
+                <p>Player Selection:</p>
+                <div class="selection" id="playerSelection"></div>
+                <p>Computer Selection:</p>
+                <div class="selection" id="computerSelection"></div>
+                <p>Round result:</p>
+                <div class="result" id="roundResult"></div>
+            </div>
+
+            <h2>Let's play! Make your selection</h2>
+            <div class="selection-buttons" id="shoot">
+                <button class="btn" id="rockButton">Rock</button>
+                <button class="btn" id="paperButton">Paper</button>
+                <button class="btn" id="scissorsButton">Scissors</button>
+            </div>
         </div>
 
-        <h2>Round results</h2>
-        <div id='playround'>
-            <p>Player Selection:</p>
-            <div id="playerSelection"></div>
-            <p>Computer Selection:</p>
-            <div id="computerSelection"></div>
-            <p>Round result:</p>
-            <div id="roundResult"></div>
-        </div>
-
-        <h2>Let's play! Make your selection</h2>
-        <div id="shoot">
-            <button id="rockButton">Rock</button>
-            <button id="paperButton">Paper</button>
-            <button id="scissorsButton">Scissors</button>
-        </div>
-
-        <script type="text/javascript" src="a.js"> </script>
+        <script type="text/javascript" src="a.js"></script>
     </body>
 </html>
