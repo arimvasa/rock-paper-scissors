@@ -1,6 +1,15 @@
 const ROCK = 'rock'
 const PAPER = 'paper'
 const SCISSORS = 'scissors'
+let computerScore = 0
+let playerScore = 0
+
+
+const resetScore = () => {
+    computerScore = 0;
+    playerScore = 0;
+}
+
 
 // Returns a random choice between rock, paper and scissors
 const getComputerChoice = () => {
@@ -19,6 +28,12 @@ const playRound = (playerSelection, computerSelection) => {
     computerOption.textContent = computerSelection
     const roundResult = document.getElementById("roundResult");
 
+    const computerScoreElement = document.getElementById("computerScore");
+    computerScore.textContent = 0
+    const playerScoreElement = document.getElementById("playerScore");
+    playerScore.textContent = 0
+    const winnerOfTheGame = document.getElementById("winnerOfTheGame")
+
     //input validation
     if (![ROCK, PAPER, SCISSORS].includes(playerSelection)) {
         throw new Error('Player selection is not accepted')
@@ -31,54 +46,54 @@ const playRound = (playerSelection, computerSelection) => {
         || (playerSelection === PAPER && computerSelection === SCISSORS)
         || (playerSelection === SCISSORS && computerSelection === ROCK)) {
         result = "computer wins"
+        computerScore++
+
     }
     else {
         result = "player wins"
+        playerScore++
     }
 
     roundResult.textContent = result
-    return result
+    computerScoreElement.textContent = computerScore;
+    playerScoreElement.textContent = playerScore;
+
+
+    if (computerScore === 5) {
+        winnerOfTheGame.textContent = "the computer";
+        resetScore();
+        showDialog();
+
+    }
+    else if (playerScore === 5) {
+        winnerOfTheGame.textContent = "the player";
+        resetScore();
+        showDialog();
+
+    }
+    else { winnerOfTheGame.textContent = ""; }
+
+
+};
+
+const dialogContainer = document.querySelector(".dialog-container");
+const myDialog = document.getElementById("myDialog");
+const yesButton = document.querySelector("#yesButton");
+
+
+function showDialog() {
+    dialogContainer.style.display = 'flex';
 }
 
-
-const game = () => {
-
-    let computerScore = 0;
-    let playerScore = 0;
-    let playerSelection;
-    let computerSelection;
-
-    const totalScore = document.getElementById("totalscore")
-    const playerScore1 = document.getElementsById("playerScore1")
-    const computerScore1 = document.getElementsById("computerScore1")
-
-    computerSelection = getComputerChoice()
-    const result = playRound(playerSelection, computerSelection)
-
-    // auksanei to score ston kathe paixti
-    if (result === "player") {
-        playerScore++;
-        console.log(`You Win! ${playerSelection} beats ${computerSelection}`)
-
-    }
-    else if (result === "computer") {
-        computerScore++;
-        console.log(`You Lose! ${playerSelection} loses to ${computerSelection}`)
-    }
-    else {
-        console.log(`It's a tie!!!!`)
-    }
-
-    console.log(`Score: Player ${playerScore} - Computer ${computerScore}`);
-
-    if (playerScore === 5) {
-        console.log("Player wins the game!");
-
-    } else if (computerScore === 5) {
-        console.log("Computer wins the game!");
-    }
-
+function hideDialog() {
+    dialogContainer.style.display = 'none';
 }
+
+yesButton.addEventListener('click', function () {
+    resetScore();
+    hideDialog();
+});
+
 
 
 const shoot = document.getElementById("shoot")
