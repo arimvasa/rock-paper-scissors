@@ -1,5 +1,3 @@
-/* index.css */
-
 /* Styling for the game container */
 .container {
     max-width: 600px;
@@ -11,13 +9,11 @@
 }
 
 /* Styling for the header */
-h1 {
+.container .header {
     color: #333;
     margin-top: 20px;
-    text-align: center
+    text-align: center;
 }
-
-
 
 /* Styling for the dialog container */
 .dialog-container {
@@ -38,13 +34,30 @@ h1 {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .dialog h2 {
-    color: #007bff;
+    color: #3e5267;
+}
+
+/* Styling for the "Yes" button */
+.play-again-button {
+    display: flex;
+    align-self: center;
+    /* Add any additional styling as needed */
 }
 
 
+
+
+.play-again-button {
+    display: flex;
+    align-self: center;
+    /* Add any additional styling as needed */
+}
 
 /* Styling for the score section */
 .score {
@@ -89,32 +102,22 @@ h1 {
 }
 
 /* Styling for the winner section */
-#winnerOfTheGame {
+.winner {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 15px;
     margin-top: 20px;
 }
 
 /* Styling for the dialog container */
-.dialog-container {
+.dialog-container.flex-column {
     margin-top: 20px;
-}
-
-/* Styling for the dialog */
-dialog {
-    display: none;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-dialog h2 {
-    color: #009688;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Styling for the shapes */
-.option {
+.option.shape {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,15 +126,40 @@ dialog h2 {
     font-size: 24px;
     font-weight: bold;
     color: #fff;
-    background-color: #009688;
     border-radius: 5px;
     margin: 0 auto;
 }
 
-#playerOption {
+.playerOption {
     background-color: #009688;
 }
 
-#computerOption {
+.computerOption {
     background-color: #757575;
+}
+
+.play-again-heading {
+    color: grey;
+    margin-bottom: 10px;
+    align-self: center;
+}
+
+
+
+.dialog-message {
+    color: #39bba1;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    align-items: center;
+}
+
+.winner {
+    font-weight: bold;
+    font-size: 36px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }

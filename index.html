@@ -8,40 +8,37 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <h1>Welcome to the rock-paper-scissors game!!</h1>
-
+        <h1 class="container">Welcome to the rock-paper-scissors game!!</h1>
         <div class="dialog-container">
             <div id="myDialog" class="dialog">
-                <h2>Play again?</h2>
-                <button class="btn" id="yesButton">Yes</button>
+                <p class="dialog-message">And the winner is...</p>
+                <div class="winner" id="winnerOfTheGame"></div>
+                <h2 class="play-again-heading">Play again?</h2>
+                <button class="btn play-again-button" id="yesButton">Yes</button>
             </div>
-
         </div>
 
-
-
         <div class="container">
-            <h2>Total Score</h2>
+            <h2 class="container">Total Score</h2>
             <div class="score" id="totalScore">
                 <p>Player Score:</p>
                 <div class="score-value" id="playerScore">0</div>
                 <p>Computer Score:</p>
                 <div class="score-value" id="computerScore">0</div>
-                <p>And the winner is..</p>
-                <div class="winner" id="winnerOfTheGame">
-                </div>
 
-                <h2>Round results</h2>
+
+                <h2 class="container">Round results</h2>
                 <div class="round" id="playround">
                     <p>Player Selection:</p>
-                    <div class="option" id="playerOption"></div>
+                    <div class="option shape playerOption" id="playerOption"></div>
                     <p>Computer Selection:</p>
-                    <div class="option" id="computerOption"></div>
+                    <div class="option shape computerOption"
+                        id="computerOption"></div>
                     <p>Round result:</p>
                     <div class="result" id="roundResult"></div>
                 </div>
 
-                <h2>Let's play! Make your selection</h2>
+                <h2 class="container">Let's play! Make your selection</h2>
                 <div class="selection-buttons" id="shoot">
                     <button class="btn" id="rockButton">Rock</button>
                     <button class="btn" id="paperButton">Paper</button>
